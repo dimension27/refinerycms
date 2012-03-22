@@ -2,7 +2,7 @@ require 'rails/all'
 require 'rbconfig'
 require 'acts_as_indexed'
 require 'truncate_html'
-require 'will_paginate'
+require 'kaminari'
 
 module Refinery
   WINDOWS = !!(RbConfig::CONFIG['host_os'] =~ %r!(msdos|mswin|djgpp|mingw)!) unless defined? WINDOWS

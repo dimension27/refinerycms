@@ -19,7 +19,7 @@ module Refinery
 
     class << self
       # How many images per page should be displayed?
-      def per_page(dialog = false, has_size_options = false)
+      def paginates_per(dialog = false, has_size_options = false)
         if dialog
           unless has_size_options
             Images.pages_per_dialog

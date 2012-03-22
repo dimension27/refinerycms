@@ -11,12 +11,12 @@ module ::Refinery
           Thread.current[:globalize_locale] = params[:switch_locale] || Refinery::I18n.default_locale
         end
 
-        @pages = ::Refinery::Page.roots.paginate(:page => params[:page], :per_page => ::Refinery::Page.per_page(true))
+        @pages = ::Refinery::Page.roots.page(:page => params[:page], :per_page => ::Refinery::Page.per_page(true))
 
         @pages = @pages.with_globalize if ::Refinery.i18n_enabled?
 
         if ::Refinery::Plugins.registered.names.include?('refinery_files')
-            @resources = Resource.paginate(:page => params[:resource_page], :per_page => Resource.per_page(true)).
+            @resources = Resource.page(:page => params[:resource_page], :per_page => Resource.per_page(true)).
                                   order('created_at DESC')
 
           # resource link

@@ -57,8 +57,10 @@ module Refinery
         end
       end
 
-      initializer "refinery.will_paginate" do
-        WillPaginate.per_page = 20
+      initializer "refinery.kaminari" do
+        Kaminari.configure do |config|
+          config.default_per_page = 20
+        end
       end
 
       initializer "register refinery_core plugin" do

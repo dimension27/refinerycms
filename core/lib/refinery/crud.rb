@@ -181,7 +181,7 @@ module Refinery
               #{class_name}.per_page
             end
 
-            @#{plural_name} = @#{plural_name}.paginate(:page => params[:page], :per_page => per_page)
+            @#{plural_name} = @#{plural_name}.page(:page => params[:page], :per_page => per_page)
           end
 
           # If the controller is being accessed via an ajax request
